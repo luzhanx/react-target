@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Toast} from 'antd-mobile';
-import { Link } from "react-router-dom";
+import {Link, withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+
 import logoImg from '@/assets/img/logo.png';
 import qqImg from '@/assets/img/qq.png';
 import wechatImg from '@/assets/img/wechat.png';
@@ -67,6 +69,8 @@ class Login extends Component {
 
   // 登录
   handleSubmit = (account, password) => {
+    let that = this;
+
     if (account.value === '') {
       Toast.fail ('请输入账号', 1);
       return;
@@ -80,9 +84,11 @@ class Login extends Component {
       Toast.fail ('密码不能少于6位数', 1);
       return;
     }
+
     Toast.loading ('登录中');
     setTimeout (() => {
-      Toast.success ('登录成功', 1);
+      Toast.success ('登录成功', 2);
+      that.props.history.push ('/home');
     }, 2000);
   };
   componentWillMount () {}
@@ -112,5 +118,16 @@ class Login extends Component {
     };
   }
 }
-
-export default Login;
+const mapStateToProps = store => {
+  return {
+    xxx: store.xxx,
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    func () {
+      dispatch ();
+    },
+  };
+};
+export default connect (mapStateToProps, mapDispatchToProps) (withRouter(Login));
