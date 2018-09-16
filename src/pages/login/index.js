@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Toast} from 'antd-mobile';
-
+import { Link } from "react-router-dom";
 import logoImg from '@/assets/img/logo.png';
 import qqImg from '@/assets/img/qq.png';
 import wechatImg from '@/assets/img/wechat.png';
@@ -40,21 +40,21 @@ class Login extends Component {
           登录
         </div>
         <div className="links">
-          <div className="link">忘记密码？</div>
-          <div className="link">新用户注册</div>
+          <Link to="/resetpassword" className="link">忘记密码？</Link>
+          <Link to="/register" className="link">新用户注册</Link>
         </div>
 
         <div className="lineText"><span className="text">or</span></div>
 
         <div className="additional">
-          <div className="itional">
+          <Link to="/qq" className="itional">
             <img src={qqImg} alt="" className="icon" />
             <div className="text">QQ登录</div>
-          </div>
-          <div className="itional">
+          </Link>
+          <Link to="/wechat" className="itional">
             <img src={wechatImg} alt="" className="icon" />
             <div className="text">微信登录</div>
-          </div>
+          </Link>
         </div>
 
         <div className="footer">

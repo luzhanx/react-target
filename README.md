@@ -57,6 +57,14 @@ resolve: {
     }
 }
 ```
+#### js控制路由
+npm i prop-types --save
+```
+import {withRouter} from 'react-router-dom';
+this.props.history.push('/login')
+
+```
+
 #### React Build打包路径问题
 在package.json里加 "homepage":"." 
 
