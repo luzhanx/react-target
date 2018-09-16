@@ -13,7 +13,7 @@ class Register extends Component {
   render () {
     return (
       <div className="register">
-        <h1>Register Page</h1>
+        <div className="h1" >Register Page</div>
       </div>
     );
   }

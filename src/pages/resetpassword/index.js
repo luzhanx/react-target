@@ -13,7 +13,7 @@ class Resetpassword extends Component {
   render () {
     return (
       <div className="resetpassword">
-        <h1>Resetpassword Page</h1>
+        <div className="h1">Resetpassword Page</div>
       </div>
     );
   }
