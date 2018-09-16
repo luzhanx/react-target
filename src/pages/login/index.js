@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 
 import logoImg from '@/assets/img/logo.png';
 import qqImg from '@/assets/img/qq.png';
+import wechatImg from '@/assets/img/wechat.png';
 
 import './index.less';
 
@@ -51,6 +52,10 @@ class Login extends Component {
           <Link to="/qq" className="itional">
             <img src={qqImg} alt="" className="icon" />
             <div className="text">QQ登录</div>
+          </Link>
+          <Link to="/weichat" className="itional">
+            <img src={wechatImg} alt="" className="icon" />
+            <div className="text">微信登录</div>
           </Link>
         </div>
 
@@ -125,4 +130,6 @@ const mapDispatchToProps = dispatch => {
     },
   };
 };
-export default connect (mapStateToProps, mapDispatchToProps) (withRouter(Login));
+export default connect (mapStateToProps, mapDispatchToProps) (
+  withRouter (Login)
+);
