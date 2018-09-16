@@ -1,4 +1,4 @@
-# react-target React版本小目标
+# React版本小目标
 
 
 ### 项目依赖
@@ -47,6 +47,15 @@ test: /\.(css|less)$/,
 {
     loader: require.resolve('less-loader')
 },
+```
+
+#### 配置路径别名
+```
+resolve: {
+    alias: {
+        '@': path.resolve("src")
+    }
+}
 ```
 #### React Build打包路径问题
 在package.json里加 "homepage":"." 
