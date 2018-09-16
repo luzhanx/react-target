@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '@/index.css';
 import App from '@/App';
-import 'lib-flexible';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import 'lib-flexible';
+import '@/assets/css/index.less';
+
+ReactDOM.render (<App />, document.getElementById ('root'));

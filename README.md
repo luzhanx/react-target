@@ -63,3 +63,24 @@ resolve: {
 #### 删除打包生成的.map文件
 webpack.config.prod.js 57行 devtool 改成 false
 
+#### 常用浏览器全屏设置
+```
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+
+<!-- UC强制全屏 --> 
+<meta name="full-screen" content="yes">
+
+<!-- UC应用模式 --> 
+<meta name="browsermode" content="application">
+
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+```
+

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import '@/App.less';
-import logoImg from '@/assets/img/logo.png';
+import Login from '@/pages/login'
+
 
 class App extends Component {
   render () {
     return (
       <div className="app">
-        App
+        <Login />
       </div>
     );
   }
