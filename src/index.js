@@ -7,8 +7,8 @@ import 'lib-flexible';
 import '@/assets/css/index.less';
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById('root')
+	<Router>
+		<App />
+	</Router>,
+	document.getElementById('root')
 );
