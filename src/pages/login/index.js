@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Toast } from 'antd-mobile';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Axios from 'axios';
 
 import logoImg from '@/assets/img/logo.png';
 import qqImg from '@/assets/img/qq.png';
@@ -61,27 +62,42 @@ class Login extends Component {
 
 	// 登录
 	handleSubmit = (account, password) => {
-		let that = this;
+		// let that = this;
 
-		if (account.value === '') {
-			Toast.fail('请输入账号', 1);
-			return;
-		}
-		if (password.value === '') {
-			Toast.fail('请输入密码', 1);
-			return;
-		}
+		// if (account.value === '') {
+		// 	Toast.fail('请输入账号', 1);
+		// 	return;
+		// }
+		// if (password.value === '') {
+		// 	Toast.fail('请输入密码', 1);
+		// 	return;
+		// }
 
-		if (password.value.length < 6) {
-			Toast.fail('密码不能少于6位数', 1);
-			return;
-		}
+		// if (password.value.length < 6) {
+		// 	Toast.fail('密码不能少于6位数', 1);
+		// 	return;
+		// }
 
 		Toast.loading('登录中');
-		setTimeout(() => {
-			Toast.success('登录成功', 2);
-			that.props.history.push('/home');
-		}, 2000);
+
+		let data = {
+			username: 'admin',
+			password: '123456'
+		};
+
+		Axios.post('/url', data).then((result) => {
+			// 输出登录的结果
+      console.log(result);
+      Toast.hide();
+		}).catch(e=> {
+      console.log(e)
+      Toast.hide();
+    });
+
+		// setTimeout(() => {
+		// 	Toast.success('登录成功', 2);
+		// 	that.props.history.push('/home');
+		// }, 2000);
 	};
 	componentWillMount() {}
 	componentDidMount() {
