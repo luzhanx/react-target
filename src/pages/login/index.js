@@ -85,7 +85,7 @@ class Login extends Component {
 			password: '123456'
 		};
 
-		Axios.post('/url', data).then((result) => {
+		Axios.post('http://te7ww3.natappfree.cc/login', data).then((result) => {
 			// 输出登录的结果
       console.log(result);
       Toast.hide();
