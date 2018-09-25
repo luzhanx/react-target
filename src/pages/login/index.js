@@ -87,7 +87,6 @@ class Login extends Component {
 		let AUTH_TOKEN = 'tttttttttttttttttttttttoken';
 
 		Axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-		Axios.defaults.headers.common['Token'] = AUTH_TOKEN;
 		Axios.defaults.withcredentials = true;
 
 		console.log(Axios.defaults);
