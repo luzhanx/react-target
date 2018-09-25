@@ -84,15 +84,23 @@ class Login extends Component {
 			username: 'admin',
 			password: '123456'
 		};
+		let AUTH_TOKEN = 'tttttttttttttttttttttttoken';
 
-		Axios.post('http://te7ww3.natappfree.cc/login', data).then((result) => {
-			// 输出登录的结果
-      console.log(result);
-      Toast.hide();
-		}).catch(e=> {
-      console.log(e)
-      Toast.hide();
-    });
+		Axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+		Axios.defaults.headers.common['Token'] = AUTH_TOKEN;
+		Axios.defaults.withcredentials = true;
+
+		console.log(Axios.defaults);
+		Axios.get('/', data)
+			.then((result) => {
+				// 输出登录的结果
+				console.log(result);
+				Toast.hide();
+			})
+			.catch((e) => {
+				console.log(e);
+				Toast.hide();
+			});
 
 		// setTimeout(() => {
 		// 	Toast.success('登录成功', 2);
